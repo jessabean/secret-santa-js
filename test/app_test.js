@@ -14,10 +14,22 @@ describe('assignSantas', function() {
     assert.strictEqual(null, actual);
   });
 
-  it('returns a list of matches that equals the length of players list', function () {
+  it('returns a list that equals the length of the original list', function () {
     var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
     var expected = 3;
 
     assert.lengthOf(actual, expected);
+  });
+
+  it('returns a list of pairs containing a santa and a recipient', function() {
+    assert.fail(true, false);
+  });
+
+  it('returns a list of pairs where santa and recipient are never the same', function() {
+    assert.fail(true, false);
+  });
+
+  it('returns a list with no duplicate recipients', function() {
+    assert.fail(true, false);
   });
 });
