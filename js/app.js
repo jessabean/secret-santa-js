@@ -16,12 +16,13 @@ BONUS:
 */
 
 
+var matches = [];
+
 function assignSantas(array) {
   if(!array || !array.length) {
     return null;
   }
 
-  var matches     = [];
   var recipients  = array.slice();
 
   for(var i=0; i<array.length; i++) {
