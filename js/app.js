@@ -15,7 +15,6 @@ BONUS:
     - Return list of santa and recipient pairs
 */
 
-var people = ["Jon", "Rob", "Sansa", "Arya", "Rickon", "Bran"];
 
 function assignSantas(array) {
   if(!array || !array.length) {
@@ -41,6 +40,5 @@ function assignSantas(array) {
   return matches;
 };
 
-assignSantas(people);
 
 module.exports.assignSantas = assignSantas;
