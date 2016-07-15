@@ -1,10 +1,10 @@
-var sample  = require('../js/sample');
+var assignSantas  = require('../js/app').assignSantas;
 var assert  = require('chai').assert;
 
-describe('sample tests', function() {
-  it('returns foo', function() {
-    var result = sample.sampleText('foo');
+describe('assignSantas', function() {
+  it('should return null for empty array', function () {
+    var actual = assignSantas([]);
 
-    assert.strictEqual(result, 'foo');
+    assert.strictEqual(null, actual);
   });
 });
