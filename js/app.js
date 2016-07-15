@@ -18,30 +18,26 @@ BONUS:
 var people = ["Jon", "Rob", "Sansa", "Arya", "Rickon", "Bran"];
 
 function assignSantas(array) {
-  // return null if null or empty array get passed in
   if(!array || !array.length) {
     return null;
   }
 
-  // Set up container for santa matches
-  var matches = [];
-  // Copy original list of people so I can manipulate it
-  var players = array.slice();
+  var matches     = [];
+  var recipients  = array.slice();
 
   for(var i=0; i<array.length; i++) {
-    var santa = players.splice(i, 1)[0];
+    var santa     = array[i];
+    var random    = Math.floor(Math.random() * array.length);
+    var recipient = recipients[random];
 
-    matches.push(
-      {
-        'santa': santa
-      }
-    );
-    
-    // Reset players list to match list so I can pick the next santa 
-    var players = array.slice();
+    if(santa !== recipient) {
+      matches.push([santa, recipient]);
+      recipients.splice(recipients.indexOf(recipient), 1);
+    } else {
+      recipient = recipients[random]
+    }
   }
 
-  console.log(matches);
   return matches;
 };
 
