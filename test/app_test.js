@@ -13,4 +13,11 @@ describe('assignSantas', function() {
 
     assert.strictEqual(null, actual);
   });
+
+  it('returns a list of matches that equals the length of players list', function () {
+    var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
+    var expected = 3;
+
+    assert.lengthOf(actual, expected);
+  });
 });
