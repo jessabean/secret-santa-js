@@ -18,7 +18,10 @@ BONUS:
 var people = ["Jon", "Rob", "Sansa", "Arya", "Rickon", "Bran"];
 
 function assignSantas(people) {
-
+  var santas = people;
+  if(!santas || !santas.length) {
+    return null;
+  }
 }
 
 module.exports.assignSantas = assignSantas;

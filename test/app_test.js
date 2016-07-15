@@ -7,4 +7,10 @@ describe('assignSantas', function() {
 
     assert.strictEqual(null, actual);
   });
+
+  it('should return null for null', function () {
+    var actual = assignSantas(null);
+
+    assert.strictEqual(null, actual);
+  });
 });
