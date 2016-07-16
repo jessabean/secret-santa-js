@@ -23,23 +23,33 @@ function assignSantas(array) {
     return null;
   }
 
+  var santas      = array.slice();
   var recipients  = array.slice();
+  shuffle(recipients);
+  
 
-  for(var i=0; i<array.length; i++) {
-    var santa     = array[i];
-    var random    = Math.floor(Math.random() * array.length);
-    var recipient = recipients[random];
-
-    if(santa !== recipient) {
-      matches.push([santa, recipient]);
-      recipients.splice(recipients.indexOf(recipient), 1);
-    } else {
-      recipient = recipients[random]
-    }
+  for(var i=0; i<santas.length; i++) {
+    var santa     = santas[i];
+    var recipient = recipients[i];
+    matches.push({ "santa": santa, "recipient": recipient });
   }
 
   return matches;
 };
 
+function shuffle(array) {
+  var n = array.length, 
+      i, 
+      j;
+
+  while(n) {
+    i = Math.floor(Math.random() * n--);
+
+    j = array[n];
+    array[n] = array[i];
+    array[i] = j;
+  } 
+  return array;
+}
 
 module.exports.assignSantas = assignSantas;
