@@ -19,7 +19,15 @@
   </header>
 
   <main role="main" id="main">
-    <p>Hello, world</p>
+    <form>
+      <div class="form-group">
+        <textarea id="santa-input" class="input-textarea"></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" id="santa-submit" class="button button-submit">Pick Santas!</button>
+      </div>
+    </form>
+    <dl id="santa-list"></dl>
   </main>
   
   <footer role="contentinfo" id="page_footer">
@@ -30,8 +38,16 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
   <script src="js/app.js" type="text/javascript"></script>
   <script type="text/javascript">
-    var people = ["Jon", "Rob", "Sansa", "Arya", "Rickon", "Bran"];
-    assignSantas(people);
+    var button  = document.getElementById('santa-submit');
+
+    button.addEventListener('click', function(e){
+      e.preventDefault();
+      var input = document.getElementById('santa-input');
+      var names = input.value.split('\n');
+
+      assignSantas(names);
+    });
+
   </script>
 </body>
 </html>

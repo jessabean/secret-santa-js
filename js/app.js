@@ -1,21 +1,3 @@
-/* 
-Conditions:
-- A person cannot receive a gift from herself
-- A person cannot receive more than one gift
-- A person cannot have more than one wish list
-
-BONUS:
-- ability to exclude certain matches (e.g., spouse)
-
-1. Assign Santas
-    Given a list of people's names:
-    - Iterate over list to select "santa"
-    - Remove santa from list
-    - Match santa with a random recipient from remaining list
-    - Return list of santa and recipient pairs
-*/
-
-
 var matches = [];
 
 function assignSantas(array) {
@@ -23,9 +5,8 @@ function assignSantas(array) {
     return null;
   }
 
-  var santas      = array.slice();
+  var santas = array.slice();
   shuffle(santas);
-  
 
   for(var i=0; i<santas.length; i++) {
     var santa     = santas[i],
@@ -41,7 +22,9 @@ function assignSantas(array) {
     matches.push({ "santa": santa, "recipient": recipient });
   }
 
+  displayNames(matches);
   return matches;
+
 };
 
 function shuffle(array) {
@@ -56,8 +39,15 @@ function shuffle(array) {
     array[n] = array[i];
     array[i] = j;
   } 
+}
 
-  return array;
+function displayNames(array) {
+  for(var i=0; i<array.length; i++) {
+    var pairing   = array[i],
+        santa     = pairing.santa,
+        recipient = pairing.recipient;
+      console.log(pairing.santa + ' gives a gift to ' + pairing.recipient);
+  }
 }
 
 module.exports.assignSantas = assignSantas;
