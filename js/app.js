@@ -24,13 +24,20 @@ function assignSantas(array) {
   }
 
   var santas      = array.slice();
-  var recipients  = array.slice();
-  shuffle(recipients);
+  shuffle(santas);
   
 
   for(var i=0; i<santas.length; i++) {
-    var santa     = santas[i];
-    var recipient = recipients[i];
+    var santa     = santas[i],
+        recipient;
+
+    // Assign santa to the person next to them to avoid assigning to self and avoid duplicate recipients
+    if(i !== santas.length-1) {
+      recipient = santas[i+1];
+    } else {
+      recipient = santas[0];      
+    }
+
     matches.push({ "santa": santa, "recipient": recipient });
   }
 
@@ -49,6 +56,7 @@ function shuffle(array) {
     array[n] = array[i];
     array[i] = j;
   } 
+
   return array;
 }
 
