@@ -1,6 +1,6 @@
-var matches = [];
-
 function assignSantas(array) {
+  var matches = [];
+
   if(!array || !array.length) {
     return null;
   }
@@ -9,7 +9,7 @@ function assignSantas(array) {
   shuffle(santas);
 
   for(var i=0; i<santas.length; i++) {
-    var santa     = santas[i],
+    var santa = santas[i],
         recipient;
 
     // Assign santa to the person next to them to avoid assigning to self and avoid duplicate recipients
@@ -24,7 +24,6 @@ function assignSantas(array) {
 
   displayNames(matches);
   return matches;
-
 };
 
 function shuffle(array) {
