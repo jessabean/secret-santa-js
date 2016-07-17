@@ -41,11 +41,21 @@ function shuffle(array) {
 }
 
 function displayNames(array) {
+  var list = document.getElementById('santa-list');
+
+  list.innerHTML = '';
+
   for(var i=0; i<array.length; i++) {
     var pairing   = array[i],
         santa     = pairing.santa,
-        recipient = pairing.recipient;
-      console.log(pairing.santa + ' gives a gift to ' + pairing.recipient);
+        recipient = pairing.recipient,
+        dt        = document.createElement('dt'),
+        dd        = document.createElement('dd');
+
+      dt.innerHTML += pairing.santa;
+      dd.innerHTML += 'buys a gift for <strong>' + pairing.recipient + '</strong>';
+      list.appendChild(dt);
+      list.appendChild(dd);
   }
 }
 
