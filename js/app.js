@@ -42,7 +42,8 @@ function shuffle(array) {
 
 function displayNames(array) {
   var list = document.getElementById('santa-list');
-
+  var input = document.getElementById('santa-input');
+  input.value = '';
   list.innerHTML = '';
 
   for(var i=0; i<array.length; i++) {
