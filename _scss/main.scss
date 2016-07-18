@@ -104,6 +104,20 @@ textarea {
   text-align: center;
 }
 
+#error {
+  height: 0;
+  visibility: hidden;
+  background: $red;
+  color: #fff;
+  padding: 1rem;
+
+  &.is-active {
+    height: auto;
+    visibility: visible;
+    margin-bottom: 1rem;
+  }
+}
+
 // =============================
 // List
 // =============================

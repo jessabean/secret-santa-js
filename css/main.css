@@ -67,6 +67,17 @@ textarea {
   padding-top: 20px;
   text-align: center; }
 
+#error {
+  height: 0;
+  visibility: hidden;
+  background: #FF7373;
+  color: #fff;
+  padding: 1rem; }
+  #error.is-active {
+    height: auto;
+    visibility: visible;
+    margin-bottom: 1rem; }
+
 dl {
   margin: 0;
   margin-top: 2rem;
