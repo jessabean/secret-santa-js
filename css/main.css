@@ -26,10 +26,16 @@ body {
   font-family: "Muli", sans-serif;
   font-size: 1.6rem; }
 
+h1,
+h2 {
+  font-family: "Ovo", serif; }
+
 h1 {
-  font-family: "Ovo", serif;
   font-size: 4.8rem;
   text-align: center; }
+
+h2 {
+  font-size: 3.6rem; }
 
 textarea {
   line-height: 1.25;
@@ -105,12 +111,21 @@ dl {
 
 dt,
 dd {
+  display: inline-block;
   float: left; }
 
 dt {
+  padding: 0.5rem;
   font-weight: bold;
-  clear: left; }
+  line-height: 1rem;
+  clear: left;
+  background: #aad7d7; }
 
 dd {
   margin-left: 4px;
   margin-bottom: 10px; }
+  dd strong {
+    display: inline-block;
+    padding: 0.5rem;
+    line-height: 1rem;
+    background: #ffa6a6; }

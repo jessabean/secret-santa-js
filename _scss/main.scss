@@ -52,10 +52,18 @@ body {
   font-size: 1.6rem;
 }
 
-h1 {
+h1,
+h2 {
   font-family: $serif;
+}
+
+h1 {
   font-size: 4.8rem;
   text-align: center;
+}
+
+h2 {
+  font-size: 3.6rem;
 }
 
 // =============================
@@ -143,15 +151,26 @@ dl {
 
 dt, 
 dd {
-  float: left;;
+  display: inline-block;
+  float: left;
 }
 
 dt {
+  padding: 0.5rem;
   font-weight: bold;
+  line-height: 1rem;
   clear: left;
+  background: lighten($blue, 10%);
 }
 
 dd {
   margin-left: 4px;
   margin-bottom: 10px;
+
+  strong {
+    display: inline-block;
+    padding: 0.5rem;
+    line-height: 1rem;
+    background: lighten($red, 10%);
+  }
 }
