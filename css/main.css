@@ -38,10 +38,14 @@ textarea {
   padding: 10px;
   border: 2px solid rgba(0, 0, 0, 0.15);
   -webkit-border-radius: 3px;
-          border-radius: 3px; }
+          border-radius: 3px;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s; }
   textarea:focus {
     border: 2px solid #87C7C7;
     outline: none; }
+  textarea.is-error {
+    border: 2px solid #FF7373; }
 
 .button {
   line-height: 1.25;
@@ -72,11 +76,26 @@ textarea {
   visibility: hidden;
   background: #FF7373;
   color: #fff;
-  padding: 1rem; }
+  opacity: 0;
+  -webkit-transform: translate3d(0, 10px, 0);
+          transform: translate3d(0, 10px, 0);
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+  pointer-events: none; }
   #error.is-active {
+    pointer-events: auto;
+    opacity: 1;
     height: auto;
     visibility: visible;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    padding: 1rem;
+    -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+            transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
 
 dl {
   margin: 0;

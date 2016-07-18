@@ -68,10 +68,15 @@ textarea {
   padding: 10px;
   border: 2px solid rgba(0,0,0,0.15);
   border-radius: 3px;
+  transition: border-color 0.3s;
 
   &:focus {
     border: 2px solid $blue;
     outline: none;
+  }
+
+  &.is-error {
+    border: 2px solid $red;
   }
 }
 
@@ -109,12 +114,20 @@ textarea {
   visibility: hidden;
   background: $red;
   color: #fff;
-  padding: 1rem;
+  opacity: 0;
+  transform: translate3d(0,10px,0);;
+  transform-origin: 50% 100%;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
 
   &.is-active {
+    pointer-events: auto;
+    opacity: 1;
     height: auto;
     visibility: visible;
     margin-bottom: 1rem;
+    padding: 1rem;
+    transform: translate3d(0,0,0) scale3d(1,1,1);;
   }
 }
 

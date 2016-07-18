@@ -51,9 +51,11 @@
       var names = input.value.split('\n');
 
       if(names[0] === '' || names.length === 1) {
+        input.classList.add('is-error');
         errorDiv.innerHTML = 'Please enter at least 2 names';
         errorDiv.classList.add('is-active');
       } else {
+        input.classList.remove('is-error');
         errorDiv.classList.remove('is-active');
         assignSantas(names);
       }
