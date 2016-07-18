@@ -8,7 +8,7 @@
   <meta name="description" content="content" />
   <meta name="keywords" content="tags" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  
+  <link href='https://fonts.googleapis.com/css?family=Ovo|Muli' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/vendor/normalize.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
 </head>
@@ -17,18 +17,22 @@
   <header role="banner" id="page_header">
     
   </header>
-
-  <main role="main" id="main">
-    <form>
-      <div class="form-group">
-        <textarea id="santa-input" class="input-textarea"></textarea>
-      </div>
-      <div class="form-actions">
-        <button type="submit" id="santa-submit" class="button button-submit">Pick Santas!</button>
-      </div>
-    </form>
-    <dl id="santa-list"></dl>
-  </main>
+  <div class="page-wrap">
+    <h1>Secret Santa</h1>
+    <main role="main" id="main">
+      <p>Please enter each name on a new line.</p>
+      <div id="error"></div>
+      <form>
+        <div class="form-group">
+          <textarea id="santa-input" class="input-textarea"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" id="santa-submit" class="button button-submit">Pick Santas</button>
+        </div>
+      </form>
+      <dl id="santa-list"></dl>
+    </main>
+  </div>
   
   <footer role="contentinfo" id="page_footer">
     

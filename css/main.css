@@ -1,2 +1,86 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
 body {
-  background: white; }
+  background: #F5F5F5; }
+
+.page-wrap {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto; }
+  @media screen and (min-width: 767px) {
+    .page-wrap {
+      width: 600px; } }
+
+#main {
+  background: #fff;
+  margin: 40px auto;
+  padding: 2rem; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Muli", sans-serif;
+  font-size: 1.6rem; }
+
+h1 {
+  font-family: "Ovo", serif;
+  font-size: 4.8rem;
+  text-align: center; }
+
+textarea {
+  line-height: 1.25;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+          border-radius: 3px; }
+  textarea:focus {
+    border: 2px solid #87C7C7;
+    outline: none; }
+
+.button {
+  line-height: 1.25;
+  display: inline-block;
+  height: auto;
+  margin: 0;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  -webkit-border-radius: 3px;
+          border-radius: 3px; }
+
+.button-submit {
+  background: #69BA78;
+  font-size: 1.8rem;
+  color: #fff; }
+  .button-submit:hover, .button-submit:focus {
+    background: #4ca45c;
+    outline: none; }
+
+.form-actions {
+  padding-top: 20px;
+  text-align: center; }
+
+dl {
+  margin: 0;
+  margin-top: 2rem;
+  padding: 0;
+  overflow: hidden; }
+
+dt,
+dd {
+  float: left; }
+
+dt {
+  font-weight: bold;
+  clear: left; }
+
+dd {
+  margin-left: 4px;
+  margin-bottom: 10px; }

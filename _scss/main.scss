@@ -1,3 +1,130 @@
+// =============================
+// Variables
+// =============================
+$red: #FF7373;
+$gray-light: #F5F5F5;
+$green: #69BA78;
+$blue: #87C7C7;
+
+$serif: 'Ovo', serif;
+$sans: 'Muli', sans-serif;
+
+$base-spacing: 1rem;
+
+// =============================
+// Layout
+// =============================
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: white;
+  background: $gray-light;
+}
+
+.page-wrap {
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 767px) {
+    width: 600px;
+  }
+}
+
+#main {
+  background: #fff;
+  margin: 40px auto;
+  padding: 2rem;
+}
+
+// =============================
+// Typography
+// =============================
+
+html { 
+  font-size: 62.5%; 
+}
+
+body {
+  font-family: $sans;
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-family: $serif;
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+// =============================
+// Form
+// =============================
+textarea {
+  line-height: 1.25;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 3px;
+
+  &:focus {
+    border: 2px solid $blue;
+    outline: none;
+  }
+}
+
+.button {
+  line-height: 1.25;
+  display: inline-block;
+  height: auto;
+  margin: 0;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.button-submit {
+  background: $green;
+  font-size: 1.8rem;
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background: darken($green, 10%);
+    outline: none;
+  }
+}
+
+.form-actions {
+  padding-top: 20px;
+  text-align: center;
+}
+
+// =============================
+// List
+// =============================
+dl {
+  margin: 0;
+  margin-top: 2rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+dt, 
+dd {
+  float: left;;
+}
+
+dt {
+  font-weight: bold;
+  clear: left;
+}
+
+dd {
+  margin-left: 4px;
+  margin-bottom: 10px;
 }
