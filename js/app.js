@@ -22,7 +22,6 @@ function assignSantas(array) {
     matches.push({ "santa": santa, "recipient": recipient });
   }
 
-  displayNames(matches);
   return matches;
 };
 
@@ -60,7 +59,7 @@ function displayNames(array) {
   }
 }
 
-if (document) {
+if (typeof(document) !== 'undefined') {
   var button  = document.getElementById('santa-submit');
 
   button.addEventListener('click', function(e){
@@ -76,7 +75,8 @@ if (document) {
     } else {
       input.classList.remove('is-error');
       errorDiv.classList.remove('is-active');
-      assignSantas(names);
+      var matches = assignSantas(names);
+      displayNames(matches);
     }
   });
 }
