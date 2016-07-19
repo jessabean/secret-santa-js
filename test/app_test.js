@@ -44,11 +44,25 @@ describe('secret santa app', function() {
     });
 
     it('returns a list with no duplicate santas', function() {
-       assert.fail(true, false);     
+      var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
+      var santas = actual.map(function(item) { return item.santa} );
+
+      var hasDuplicates = santas.some(function(item, index) {
+        return santas.indexOf(item) != index;
+      });
+      
+      assert.isNotTrue(hasDuplicates, 'hasDuplicates when santas = ' + santas);
     })
 
     it('returns a list with no duplicate recipients', function() {
-      assert.fail(true, false);
+      var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
+      var recipients = actual.map(function(item) { return item.recipient} );
+
+      var hasDuplicates = recipients.some(function(item, index) {
+        return recipients.indexOf(item) != index;
+      });
+      
+      assert.isNotTrue(hasDuplicates, 'hasDuplicates when recipients = ' + recipients);
     });
   });
 
