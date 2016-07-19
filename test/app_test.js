@@ -1,6 +1,7 @@
 var assignSantas  = require('../js/app').assignSantas;
 var parseNames  = require('../js/app').parseNames;
 var assert  = require('chai').assert;
+var expect = require('chai').expect;
 
 describe('secret santa app', function() {
   describe('assignSantas', function() {
@@ -23,24 +24,23 @@ describe('secret santa app', function() {
       assert.lengthOf(actual, expected);
     });
 
-    it('returns a list of pairs containing a santa', function() {
+    it('returns a list of pairs containing a santa and a recipient', function(){
       var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
-      
-      for (var i in actual) {
-        assert.isTrue(actual[i].hasOwnProperty('santa'), 'hasOwnProperty("santa")');
-      }
-    });
 
-    it('returns a list of pairs containing a recipient', function() {
-      var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
-      
       for (var i in actual) {
-        assert.isTrue(actual[i].hasOwnProperty('recipient'), 'hasOwnProperty("recipient")');
+        expect(actual[i]).to.have.all.keys('santa', 'recipient');
       }
     });
 
     it('returns a list of pairs where a santa and her recipient are not the same person', function() {
-      assert.fail(true, false);
+      var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
+
+      for (var i in actual) {
+        var santa = actual[i].santa;
+        var recipient = actual[i].recipient;
+
+        expect(santa).not.equal(recipient);
+      }
     });
 
     it('returns a list with no duplicate santas', function() {
@@ -82,5 +82,4 @@ describe('secret santa app', function() {
     });
 
   });
-})
-
+});
