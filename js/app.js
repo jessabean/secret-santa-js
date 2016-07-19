@@ -59,6 +59,17 @@ function displayNames(array) {
   }
 }
 
+function parseNames(value) {
+  var names = [];
+  var vals = value.trim().split('\n');
+
+  for (var i=0; i<vals.length; i++) {
+    var name = vals[i].trim();
+    if (name === '') continue;
+    names.push(name);
+  }
+}
+
 if (typeof(document) !== 'undefined') {
   var button  = document.getElementById('santa-submit');
 
@@ -66,14 +77,7 @@ if (typeof(document) !== 'undefined') {
     e.preventDefault();
     var input = document.getElementById('santa-input');
     var errorDiv = document.getElementById('error');
-    var names = [];
-    var vals = input.value.trim().split('\n');
-
-    for (var i=0; i<vals.length; i++) {
-      var name = vals[i].trim();
-      if (name === '') continue;
-      names.push(name);
-    }
+    var names = parseNames(input.value);
 
     if(names.length < 2) {
       input.classList.add('is-error');
