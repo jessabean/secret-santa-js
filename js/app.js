@@ -66,9 +66,16 @@ if (typeof(document) !== 'undefined') {
     e.preventDefault();
     var input = document.getElementById('santa-input');
     var errorDiv = document.getElementById('error');
-    var names = input.value.split('\n');
+    var names = [];
+    var vals = input.value.trim().split('\n');
 
-    if(names[0] === '' || names.length === 1) {
+    for (var i=0; i<vals.length; i++) {
+      var name = vals[i].trim();
+      if (name === '') continue;
+      names.push(name);
+    }
+
+    if(names.length < 2) {
       input.classList.add('is-error');
       errorDiv.innerHTML = 'Please enter at least 2 names';
       errorDiv.classList.add('is-active');
