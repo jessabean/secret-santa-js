@@ -39,9 +39,13 @@ describe('secret santa app', function() {
       }
     });
 
-    it('returns a list of pairs where santa and recipient are never the same', function() {
+    it('returns a list of pairs where a santa and her recipient are not the same person', function() {
       assert.fail(true, false);
     });
+
+    it('returns a list with no duplicate santas', function() {
+       assert.fail(true, false);     
+    })
 
     it('returns a list with no duplicate recipients', function() {
       assert.fail(true, false);
