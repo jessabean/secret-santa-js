@@ -61,7 +61,7 @@ function displayNames(array) {
 
 function parseNames(value) {
   var names = [];
-  var vals = value.trim().split('\n');
+  var vals = value.split('\n');
 
   for (var i=0; i<vals.length; i++) {
     var name = vals[i].trim();

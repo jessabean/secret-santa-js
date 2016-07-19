@@ -45,12 +45,26 @@ describe('secret santa app', function() {
     });
 
     it('should remove empty lines', function(){
+      var actual = parseNames('Cersei\n\n\nJamie\nTyrion\n');
+      var expected = ['Cersei', 'Jamie', 'Tyrion'];
 
+      assert.deepEqual(actual, expected);
     });
 
     it('should trim each line', function(){
+      var actual = parseNames('Cersei\n\n\nJamie\n\tTyrion\n');
+      var expected = ['Cersei', 'Jamie', 'Tyrion'];
 
+      assert.deepEqual(actual, expected);
     });
+    
+    it('should allow spaces in names', function() {
+      var actual = parseNames('Cooper Von Snugglesworth\nStanley Teets');
+      var expected = ['Cooper Von Snugglesworth', 'Stanley Teets'];
+
+      assert.deepEqual(actual, expected);
+    });
+
   });
 })
 
