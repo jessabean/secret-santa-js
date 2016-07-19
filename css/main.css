@@ -16,6 +16,8 @@ body {
 
 #main {
   background: #fff;
+  -webkit-box-shadow: 0 2px 2px gainsboro;
+          box-shadow: 0 2px 2px gainsboro;
   margin: 40px auto;
   padding: 2rem; }
 
