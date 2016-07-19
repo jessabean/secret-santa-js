@@ -23,8 +23,20 @@ describe('secret santa app', function() {
       assert.lengthOf(actual, expected);
     });
 
-    it('returns a list of pairs containing a santa and a recipient', function() {
-      assert.fail(true, false);
+    it('returns a list of pairs containing a santa', function() {
+      var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
+      
+      for (var i in actual) {
+        assert.isTrue(actual[i].hasOwnProperty('santa'), 'hasOwnProperty("santa")');
+      }
+    });
+
+    it('returns a list of pairs containing a recipient', function() {
+      var actual = assignSantas(['Cersei', 'Jamie', 'Tyrion']);
+      
+      for (var i in actual) {
+        assert.isTrue(actual[i].hasOwnProperty('recipient'), 'hasOwnProperty("recipient")');
+      }
     });
 
     it('returns a list of pairs where santa and recipient are never the same', function() {
