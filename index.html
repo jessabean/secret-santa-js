@@ -41,26 +41,6 @@
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
   <script src="js/app.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    var button  = document.getElementById('santa-submit');
 
-    button.addEventListener('click', function(e){
-      e.preventDefault();
-      var input = document.getElementById('santa-input');
-      var errorDiv = document.getElementById('error');
-      var names = input.value.split('\n');
-
-      if(names[0] === '' || names.length === 1) {
-        input.classList.add('is-error');
-        errorDiv.innerHTML = 'Please enter at least 2 names';
-        errorDiv.classList.add('is-active');
-      } else {
-        input.classList.remove('is-error');
-        errorDiv.classList.remove('is-active');
-        assignSantas(names);
-      }
-    });
-
-  </script>
 </body>
 </html>

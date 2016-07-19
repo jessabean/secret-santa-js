@@ -60,4 +60,23 @@ function displayNames(array) {
   }
 }
 
-module.exports.assignSantas = assignSantas;
+if (document) {
+  var button  = document.getElementById('santa-submit');
+
+  button.addEventListener('click', function(e){
+    e.preventDefault();
+    var input = document.getElementById('santa-input');
+    var errorDiv = document.getElementById('error');
+    var names = input.value.split('\n');
+
+    if(names[0] === '' || names.length === 1) {
+      input.classList.add('is-error');
+      errorDiv.innerHTML = 'Please enter at least 2 names';
+      errorDiv.classList.add('is-active');
+    } else {
+      input.classList.remove('is-error');
+      errorDiv.classList.remove('is-active');
+      assignSantas(names);
+    }
+  });
+}
