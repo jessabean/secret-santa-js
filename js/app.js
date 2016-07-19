@@ -68,6 +68,7 @@ function parseNames(value) {
     if (name === '') continue;
     names.push(name);
   }
+  return names;
 }
 
 if (typeof(document) !== 'undefined') {
