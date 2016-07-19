@@ -80,3 +80,7 @@ if (document) {
     }
   });
 }
+
+if (typeof(module) !== 'undefined') {
+  module.exports.assignSantas = assignSantas;
+}
