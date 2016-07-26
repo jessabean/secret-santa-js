@@ -21,6 +21,10 @@ body {
   margin: 40px auto;
   padding: 2rem; }
 
+#page_footer {
+  padding: 1rem;
+  text-align: center; }
+
 html {
   font-size: 62.5%; }
 
@@ -39,6 +43,17 @@ h1 {
 h2 {
   font-size: 3.6rem; }
 
+a {
+  color: #5A6380;
+  text-decoration: none;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s; }
+  a:hover {
+    -webkit-box-shadow: inset 0 -2px 0 0 #5A6380;
+            box-shadow: inset 0 -2px 0 0 #5A6380; }
+
 textarea {
   line-height: 1.25;
   display: block;
@@ -47,8 +62,8 @@ textarea {
   border: 2px solid rgba(0, 0, 0, 0.15);
   -webkit-border-radius: 3px;
           border-radius: 3px;
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s; }
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s; }
   textarea:focus {
     border: 2px solid #87C7C7;
     outline: none; }
@@ -70,7 +85,9 @@ textarea {
 .button-submit {
   background: #69BA78;
   font-size: 1.8rem;
-  color: #fff; }
+  color: #fff;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s; }
   .button-submit:hover, .button-submit:focus {
     background: #4ca45c;
     outline: none; }
@@ -131,3 +148,9 @@ dd {
     padding: 0.5rem;
     line-height: 1rem;
     background: #ffa6a6; }
+
+.icon-link {
+  display: inline-block;
+  padding: 1rem; }
+  .icon-link svg {
+    vertical-align: middle; }
